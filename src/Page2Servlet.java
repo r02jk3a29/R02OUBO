@@ -47,7 +47,7 @@ public class Page2Servlet extends HttpServlet {
 			Connection connection=DriverManager.getConnection(url,id,pass);
 			PreparedStatement st = 
 					connection.prepareStatement(
-							"Insert into OUBO(email,numa,numb) Values(?,?,?)"
+							"Insert into OUBO(EMAIL,NUMA,NUMB) Values(?,?,?)"
 						);
 			st.setString(1, sEname);
 			st.setString(2, sNumA);
