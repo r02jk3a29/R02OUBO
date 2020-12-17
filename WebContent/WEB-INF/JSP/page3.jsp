@@ -14,9 +14,15 @@ String sKigen = (String)request.getAttribute("KIGEN");
 <p>応募は <%=sKigen %> に締め切りました</p>
 
 <p>当選確認するにはメールアドレスを入力してください。
-<form method="get" action="page4" >
+<form method="get" action="page4">
 <input type="email" name="email" />
 <input type="submit" value="確認する" />
 </form>
+
+<form method="get" action="./WinList">
+<a href="./WinList">当選者一覧表はこちら</a>
+</form>
+
+
 </body>
 </html>
