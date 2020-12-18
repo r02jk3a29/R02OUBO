@@ -33,10 +33,6 @@ public class Page2Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		final String driverName = "oracle.jdbc.driver.OracleDriver";
-		final String url = "jdbc:oracle:thin:@192.168.54.226:1521/orcl";
-		final String id = "OUBO";
-		final String pass = "TOUSEN";
 		
 		String sEname = request.getParameter("email");
 		String sNumA = request.getParameter("numa");
@@ -48,37 +44,21 @@ public class Page2Servlet extends HttpServlet {
 			Array[i]=String.valueOf(sNumA.charAt(i));
 			sum=+Integer.parseInt(Array[i]);
 		}
-		if(sum%9!=0) {
+		if(sNumA.equals(sNumB)) {
+			request.setAttribute("re2","êîéöAÇ∆êîéöBÇÕà·Ç§ílÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢ÅB");
+			RequestDispatcher rd = request.getRequestDispatcher("/index");
+			rd.forward(request, response);
+		}
+		else if(sum%9!=0) {
 			request.setAttribute("re","êîéöAÇ™ÇΩÇæÇµÇ≠Ç†ÇËÇ‹ÇπÇÒÅB");
 			RequestDispatcher rd = request.getRequestDispatcher("/index");
 			rd.forward(request, response);
-		}else {
-		try {
-			Class.forName(driverName);
-			Connection connection=DriverManager.getConnection(url,id,pass);
-			PreparedStatement st = 
-					connection.prepareStatement(
-							"Insert into OUBO(EMAIL,NUMA,NUMB,CREATED) Values(?,?,?,sysdate)"
-						);
-			st.setString(1, sEname);
-			st.setString(2, sNumA);
-			st.setString(3, sNumB);
-			
-			st.executeUpdate();
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page2.jsp");
+		}else{
+			request.setAttribute("sEname",sEname);
+			request.setAttribute("sNumA",sNumA);
+			request.setAttribute("sNumB",sNumB);
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/kadai6.jsp");
 			rd.forward(request, response);
-			
-		}catch(SQLException e) {
-			System.out.println("SQLException");
-			response.getWriter().println("SQLException");
-			e.printStackTrace();
-			e.printStackTrace(response.getWriter());
-		} catch (ClassNotFoundException e) {
-			System.out.println("ClassNotFoundException");
-			response.getWriter().println("ClassNotFoundException");
-			e.printStackTrace();
-			e.printStackTrace(response.getWriter());
-		}
 		}
 	}
 

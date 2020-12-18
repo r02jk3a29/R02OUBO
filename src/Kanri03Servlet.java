@@ -30,6 +30,7 @@ public class Kanri03Servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/kanri03.jsp");
 		rd.forward(request, response);
+	
 	}
 
 }
