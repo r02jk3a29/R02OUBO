@@ -28,7 +28,11 @@ public class Page1Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1.jsp");
+		String day = (String)request.getAttribute("day");
+		request.setAttribute("day",day);
+		String re = (String)request.getAttribute("re");
+		request.setAttribute("re",re);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1(2).jsp");
 		rd.forward(request, response);
 	}
 
