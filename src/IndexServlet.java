@@ -49,7 +49,7 @@ public class IndexServlet extends HttpServlet {
 			rs.next();
 			String diff = rs.getString("DIFF");
 			if(diff.charAt(0)=='-') {
-				request.setAttribute("DIFF","page1");
+				request.setAttribute("day",diff);
 				RequestDispatcher rd = request.getRequestDispatcher("/page1");
 				rd.forward(request, response);
 				
