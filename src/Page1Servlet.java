@@ -32,6 +32,8 @@ public class Page1Servlet extends HttpServlet {
 		request.setAttribute("day",day);
 		String re = (String)request.getAttribute("re");
 		request.setAttribute("re",re);
+		String re2 = (String)request.getAttribute("re2");
+		request.setAttribute("re2",re2);
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1(2).jsp");
 		rd.forward(request, response);
 	}
