@@ -34,7 +34,7 @@ public class Page1Servlet extends HttpServlet {
 		request.setAttribute("re",re);
 		String re2 = (String)request.getAttribute("re2");
 		request.setAttribute("re2",re2);
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/Xmas.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/xmas.jsp");
 		rd.forward(request, response);
 	}
 

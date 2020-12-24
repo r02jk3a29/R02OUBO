@@ -33,7 +33,7 @@ if(day2<10){
 7桁の数字B<input type="number" name="numb" placeholder="7桁の数字B" /><%if(re2!=null){%><%=re2 %><%}%><br/>
 <input type="submit" value="登録する" />
 </form>
-<a href="./Valentine">バレンタインセール</a><a href="./Xmas">クリスマスセール</a><br />
+<a href="./valentine">バレンタインセール</a><a href="./xmas">クリスマスセール</a><br />
 <input  type="button" onclick="location.href='/Oubo_20201113/WebContent/WEB-INF/JSP/page1.6.jsp'" value="複数入力ページ" /><br />
 </body>
 </html>
