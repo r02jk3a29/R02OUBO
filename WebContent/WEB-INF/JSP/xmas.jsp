@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>新学期セール</title>
+<title>クリスマスセール</title>
 </head>
-<body>
-
-<body style="background-image:url(file:///Z:/git/R02OUBO/WebContent/WEB-INF/image/shingakki.png)">
+</body>
+<body style="background-image:url(file:///Z:/git/R02OUBO/WebContent/WEB-INF/image/santa.png)">
 <body style=".resizeimage width:100%;" >
+
+</head>
 
 <%
 String re= (String)request.getAttribute("re");
@@ -33,7 +34,7 @@ if(day2<10){
 7桁の数字B<input type="number" name="numb" placeholder="7桁の数字B" /><%if(re2!=null){%><%=re2 %><%}%><br/>
 <input type="submit" value="登録する" />
 </form>
-<a href="./valentine">バレンタインセール</a><a href="./xmas">クリスマスセール</a><br />
+<a href="./valentine">バレンタインセール</a><a href="./singakki">新学期セール</a><br />
 <input  type="button" onclick="location.href='/Oubo_20201113/WebContent/WEB-INF/JSP/page1.6.jsp'" value="複数入力ページ" /><br />
 </body>
 </html>
